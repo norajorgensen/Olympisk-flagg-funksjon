@@ -1,0 +1,49 @@
+fun flagg-farge(flagg):
+  if flagg == "farger":
+    circle-blue = circle(30, "outline", "blue")
+    circle-black = circle(30, "outline", "black")
+    circle-red = circle(30, "outline", "red")
+    circle-yellow = circle(30, "outline", "yellow")
+    circle-green = circle(30, "outline", "green")
+
+    background = empty-scene(250, 190)
+
+    blue-circle = put-image(circle-blue, 50, 150, background)
+    black-circle = put-image(circle-black, 115, 150, background)
+    red-circle = put-image(circle-red, 185, 150, background)
+    yellow-circle = put-image(circle-yellow, 80, 120, background)
+    green-circle = put-image(circle-green, 150, 120, background)
+
+    blue-yellow-circle = overlay(blue-circle, yellow-circle)
+    black-green-circle = overlay(black-circle, green-circle)
+
+    olympisk-flagg = overlay(blue-yellow-circle, overlay(black-green-circle, red-circle))
+    olympisk-flagg
+  else if flagg == "monokromt":
+    circle-black1 = circle(30, "outline", "black")
+    circle-black2 = circle(30, "outline", "black")
+    circle-black3 = circle(30, "outline", "black")
+    circle-black4 = circle(30, "outline", "black")
+    circle-black5 = circle(30, "outline", "black")
+
+    background2 = empty-scene(250, 190)
+
+    circle1 = put-image(circle-black1, 50, 150, background2)
+    circle2 = put-image(circle-black2, 115, 150, background2)
+    circle3 = put-image(circle-black3, 185, 150, background2)
+    circle4 = put-image(circle-black4, 80, 120, background2)
+    circle5 = put-image(circle-black5, 150, 120, background2)
+
+    circle1-4 = overlay(circle1, circle4)
+    circle2-5 = overlay(circle2, circle5)
+
+    monokromt-olympisk-flagg = overlay(circle1-4, overlay(circle2-5, circle3))
+    monokromt-olympisk-flagg
+end
+
+where:
+  flagg-farge("farger")
+  flagg-farge("monokromt")
+end
+
+flagg-farge("farger")
